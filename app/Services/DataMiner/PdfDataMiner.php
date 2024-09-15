@@ -7,7 +7,6 @@ use Illuminate\Http\UploadedFile;
 
 class PdfDataMiner extends DataMiner
 {
-
     protected function extractData(UploadedFile $file): array
     {
         echo "Extracting data from PDF file...\n";

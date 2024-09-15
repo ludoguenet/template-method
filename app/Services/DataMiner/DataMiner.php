@@ -22,6 +22,10 @@ abstract class DataMiner
         $this->closeFile($file);
     }
 
+    abstract protected function extractData(UploadedFile $file): array;
+
+    abstract protected function parseData(array $rawData): string;
+
     protected function openFile(string $path): UploadedFile
     {
         if (! file_exists($path)) {
@@ -42,9 +46,6 @@ abstract class DataMiner
 
         return UploadedFile::createFromBase($uploadedFile);
     }
-
-    abstract protected function extractData(UploadedFile $file): array;
-    abstract protected function parseData(array $rawData): string;
 
     protected function analyzeData(string $data): string
     {

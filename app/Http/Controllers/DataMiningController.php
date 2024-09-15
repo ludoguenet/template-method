@@ -11,7 +11,8 @@ class DataMiningController extends Controller
     public function processDocFile()
     {
         $docMiner = new DocDataMiner();
-        // $docMiner->mineData();
+
+        $docMiner->mineData(storage_path('blank.docx'));
     }
 
     public function processPdfFile()
@@ -24,6 +25,7 @@ class DataMiningController extends Controller
     public function processCsvFile()
     {
         $csvMiner = new CsvDataMiner();
-        // $csvMiner->mineData();
+
+        $csvMiner->mineData(storage_path('blank.csv'));
     }
 }
